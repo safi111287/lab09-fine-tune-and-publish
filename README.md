@@ -11,34 +11,35 @@ suggested queue. It also handles empty input.
 
 ## How to run it
 
-On Windows, open Anaconda Prompt in the folder where you want to download the
-project. Run these commands in order:
+With Git and Conda installed, open Anaconda Prompt on Windows in the folder
+where you want the project. Run the commands below in order. The environment
+uses Python 3.12, and each Python command uses that named environment directly.
 
 ```bash
 git clone https://github.com/safi111287/lab09-fine-tune-and-publish.git lab09-fine-tune-and-publish-test
 cd lab09-fine-tune-and-publish-test
 conda env create -f environment.yml
 conda activate lab09-fine-tune-and-publish
-python run_experiments.py
-python -m ruff format --check .
-python -m ruff check .
-python -m pytest
+conda run --no-capture-output -n lab09-fine-tune-and-publish python -m pip install -r requirements-dev.txt
+conda run -n lab09-fine-tune-and-publish python -c "import torch; print(torch.__version__)"
+conda run -n lab09-fine-tune-and-publish python -m ruff format --check .
+conda run -n lab09-fine-tune-and-publish python -m ruff check .
+conda run -n lab09-fine-tune-and-publish python -m pytest
+conda run --no-capture-output -n lab09-fine-tune-and-publish python run_experiments.py
+conda run --no-capture-output -n lab09-fine-tune-and-publish python app.py
 ```
 
-If the environment already exists, run
-`conda env update -n lab09-fine-tune-and-publish -f environment.yml`
-in place of `conda env create`. The environment uses Python 3.12.
+If the environment already exists, replace the `conda env create` line with
+`conda env update -n lab09-fine-tune-and-publish -f environment.yml`.
+The explicit pip command checks the pinned dependencies in that environment.
+`requirements-dev.txt` includes `requirements.txt`, so one pip command covers
+both the runtime and test dependencies.
 
-To start the local demo after the experiment saves the model, run
-`python app.py` and open the local URL printed in the terminal.
-
-The full experiment expects 40 independent messages in
-`data/own_messages.csv`. The first run downloads DistilBERT. It saves the selected
-checkpoint, tokenizer, and model card in the ignored `model/` folder. To run
-the validation grid by itself, use `python run_experiments.py --validation-only`.
-To run both baselines independently, use `python run_baselines.py`. For a completed
-run with saved weights, `python run_experiments.py --own-only` scores the independent
-CSV without rerunning training or the generated test evaluation.
+The first experiment run downloads DistilBERT. The full run uses the 40
+independent messages in `data/own_messages.csv`, writes the results to
+`reports/`, and saves the selected checkpoint, tokenizer, and model card in
+the ignored `model/` folder. When the demo starts, open the local URL printed
+in the terminal.
 
 ## Data and split
 
@@ -125,12 +126,7 @@ python app.py
 
 ## Tests
 
-```powershell
-python -m ruff format --check .
-python -m ruff check .
-python -m pytest
-```
-
+The setup commands above run Ruff and pytest in the project environment.
 The tests use a small DistilBERT configuration and an offline tokenizer to
 verify model behavior without downloading the pretrained weights.
 
