@@ -1,0 +1,11 @@
+# Lakeshore Bike Share: ticket routing findings
+
+At 300 training tickets, DistilBERT full and TF-IDF with logistic regression averaged 91.9% and 87.1% on validation, then scored 90.0% and 87.1% on the held-out test, respectively.
+
+The [learning curve](reports/learning_curve.png) shows how the comparison changed as we added labelled tickets. At 50 training tickets, the best DistilBERT variant averaged 64.2% versus 66.1% for TF-IDF and the seed ranges overlapped. At 150 training tickets, the best DistilBERT variant averaged 87.9% versus 81.2% for TF-IDF and the seed ranges did not overlap. At 300 training tickets, the best DistilBERT variant averaged 91.9% versus 87.1% for TF-IDF and the seed ranges did not overlap. At 300 rows, the frozen-body and full models averaged 76.2% and 91.9%, respectively. The majority baseline stayed at 29.2% on validation.
+
+I checked two reasons the generated scores may flatter the models. First, 49 of 240 validation tickets had exactly the same text as a row in the full training pool even though the ticket IDs were disjoint. Repeated language makes word matching a strong baseline. Second, 24 validation tickets contained an unchanged vague phrase. A ticket with no topic cannot be routed reliably from its words alone. Those counts describe this dataset; they do not measure how much either effect changed the scores. The selected DistilBERT and TF-IDF test macro F1 were 0.902 and 0.873, respectively.
+
+I also scored an AI-assisted draft of 40 fictional messages after selecting the model. DistilBERT classified 39 of 40 correctly (97.5%, macro F1 0.975), versus 34 of 40 for TF-IDF (85.0%, macro F1 0.845). DistilBERT remained ahead, but the gap was larger than on the generated test set. This draft does not show that the generated test overstates DistilBERT's performance. It is small, balanced by category, and many messages give a clear clue about which team should handle them.
+
+I would pilot the full comparison with reviewers before automating routing. The strongest DistilBERT run is worth including because it improved both accuracy and macro F1 here, but I would also keep TF-IDF as a cheaper comparison. I would switch to the cheaper model if the improvement disappears on a new sample of labelled customer tickets.
