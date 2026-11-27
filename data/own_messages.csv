@@ -1,0 +1,41 @@
+text,label
+"I paid with a day pass, but my card shows a separate rental charge. Can you check what that was for?",billing
+Need a reciept for work.,billing
+My bank shows two withdrawals for one bike trip.,billing
+I had five dollars in ride credit before checkout. The full price still came out of my debit card.,billing
+The app said the first 30 minutes were included. Why did I pay extra on a 12-minute ride?,billing
+Could you send me a breakdown of the service fee and tax?,billing
+I paid for a guest ride that never started. How do I get my money back?,billing
+"A payment is marked failed in the app, but the money has left my bank account.",billing
+The total changed after I applied a promo code. Can you check which amount I actually paid?,billing
+Can you correct the company name on my receipt so I can get reimbursed?,billing
+Loose handelbar grip.,bike_fault
+The electric assist cuts in and out on hills.,bike_fault
+The front brake lever goes right to the handlebar without slowing the bike.,bike_fault
+The left pedal spins sideways when I put weight on it.,bike_fault
+A piece of the mudguard keeps rubbing against the back wheel.,bike_fault
+One of the wheel spokes is loose and clicking against the frame.,bike_fault
+"The battery display said full, but the bike shut off halfway up the hill.",bike_fault
+The basket is hanging by one screw. It almost dropped my bag.,bike_fault
+The bike moves a few feet and then the chain skips under pressure.,bike_fault
+The front tire has a bulge on the side. I put the bike back without riding it.,bike_fault
+"The map points to a rack outside the library, but there's nothing at that spot.",station
+Is the station by the arena closed during construction?,station
+"The app shows four open spaces at the market station, but every rack is occupied.",station
+Two bays at the museum are taped off. Should the app still list them as available?,station
+The reader at the park entrance does not light up on any of the docks.,station
+Can you tell me where the temporary docking station is while the sidewalk is being repaired?,station
+Kioskk screen is blank.,station
+"I can see bikes at the station beside the hospital, but the app marks that location out of service.",station
+I rode to the west-side station because the app showed two empty spots. A delivery truck is parked across the entrance and there is no room to wheel my bike past it. Is there another drop-off nearby?,station
+I tried three different docks at the community centre and none would latch.,station
+I signed in with Apple on my old phone. How do I get into the same profile on Android?,account
+Can I turn off marketing emails without losing my ride alerts?,account
+"The reset link says it has already been used, even though I just opened it.",account
+I have two rider profiles under different email addresses. Can I keep my trip history in one?,account
+Verification txt goes to my old number.,account
+Where do I change the emergency contact in my profile?,account
+"I can sign in on the website, but the mobile app says my password is incorrect.",account
+I tried to register and it says my email address is already tied to a profile.,account
+I changed my surname. How can I update the name on my membership?,account
+"I signed out when I lent my phone to my sister. After signing back in, my profile is empty even though I used the same email address. Can you help me find my old ride history?",account

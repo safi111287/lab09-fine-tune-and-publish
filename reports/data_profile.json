@@ -1,0 +1,11 @@
+{
+  "training_label_counts": {
+    "account": 147,
+    "bike_fault": 208,
+    "billing": 166,
+    "station": 199
+  },
+  "validation_rows": 240,
+  "validation_exact_text_matches_with_training": 49,
+  "validation_rows_with_unchanged_vague_phrase": 24
+}

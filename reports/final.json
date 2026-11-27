@@ -1,0 +1,38 @@
+{
+  "model": "full",
+  "seed": 22,
+  "training_size": 300,
+  "epoch": 3,
+  "learning_rate": 5e-05,
+  "overall_recommendation_by_validation": "full",
+  "scores": {
+    "test": {
+      "full": {
+        "accuracy": 0.9,
+        "macro_f1": 0.9020502751305823
+      },
+      "most_common": {
+        "accuracy": 0.2875,
+        "macro_f1": 0.11165048543689321
+      },
+      "tfidf_logistic": {
+        "accuracy": 0.8708333333333333,
+        "macro_f1": 0.8733427253946924
+      }
+    },
+    "own_messages": {
+      "full": {
+        "accuracy": 0.975,
+        "macro_f1": 0.9749373433583959
+      },
+      "most_common": {
+        "accuracy": 0.25,
+        "macro_f1": 0.1
+      },
+      "tfidf_logistic": {
+        "accuracy": 0.85,
+        "macro_f1": 0.8451308753166339
+      }
+    }
+  }
+}
