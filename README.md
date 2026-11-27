@@ -1,7 +1,7 @@
 # Lakeshore Ticket Sorter: fine-tuning against a baseline
 
-Model: Publication pending.  
-Space: Publication pending.
+- [Live demo — Hugging Face Space](https://huggingface.co/spaces/SafaaAlhawasli/lab09-ticket-sorter)
+- [Trained model and model card](https://huggingface.co/SafaaAlhawasli/lab09-ticket-sorter-model)
 
 ## What it does
 
